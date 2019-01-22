@@ -10,6 +10,11 @@
   function insert($nomTab, $data){
     //Insert les elements de $data dans la bd renseignée
     global $c;
+    $value;
+    $key;
+    foreach ($data as $key => $value) {
+      // code...
+    }
     $sql = "DELETE FROM `$nomTab` WHERE 1"
     return mysqli_query($c,sql);
   }
