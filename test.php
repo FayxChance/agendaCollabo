@@ -1,4 +1,11 @@
 <?php include_once("./view/layouts/header.php"); ?>
+  <style media="screen">
+    main div .row div{
+      border: solid black 1px;
+      padding: 10px 15px;
+
+    }
+  </style>
   <main>
     <div class="container" style="background-color:skyblue">
       <h1>Fixed Container</h1>
@@ -12,6 +19,16 @@
           col-xl-4
         </div>
       </div>
+      <div class="row justify-content-md-center" style="background:aquamarine">
+        <div class="col-md-4"style="background:">
+          col-xl-8
+        </div>
+        <div class="col-md-4">
+          col-xl-4
+        </div>
+      </div>
+
+
     </div>
     <h1>Hello, world!</h1>
     <h2>YOLO</h2>
