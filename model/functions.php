@@ -9,14 +9,20 @@
 
   function insert($nomTab, $data){
     //Insert les elements de $data dans la bd renseignée
+    //insert("utilisateur",['prenom'=>"toto",'nom'=>"toto"])
     global $c;
-    $value;
-    $key;
+    $keyT = "";
+    $valueT = "";
     foreach ($data as $key => $value) {
-      // code...
+      $keyT = $keyT . $key . ",";
+      $valueT = $valueT . $value . ",";
     }
-    $sql = "DELETE FROM `$nomTab` WHERE 1"
-    return mysqli_query($c,sql);
+    substr($keyT, 0, -1);  // retourne "abcde"
+    substr($valueT, -1);
+
+    $sql = "INSERT INTO `$nomTab`($keyT) VALUES ($valueT)";
+    var_dump($sql);
+    //return mysqli_query($c,sql);
   }
 
 
