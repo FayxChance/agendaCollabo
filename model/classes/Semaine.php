@@ -1,4 +1,5 @@
 <?php
+include_once ("../functions.php");
 class Semaine{
 	private string $JourDebut;
 
@@ -11,11 +12,18 @@ class Semaine{
 	public function Setjour(){
 		$this->JourDebut=JourDebut;
 	}
-	public bool YaEvent($JourDebut){
+	public function YaEvent($JourDebut){
+		$event= array();
+		$chaine= substr(DebutEvent,0, 10);
+		$event=actionbdd("SELECT","Event",["NomEvent" =>"''"], $chaine=$JourDebut);
+		return != empty($event);
+	}
+	public AfficheEvent($JourDebut){
+	
+	
 		
-
-
-}
+	
+	}
 
 }
 
