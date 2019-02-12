@@ -8,22 +8,22 @@ class Evenement {
   private String $dateFin;
   private String $desc;
 
-  public __construct(String $nomEvent,String $dateDebut, String $dateFin, String $desc){
+  public function __construct(String $nomEvent,String $dateDebut, String $dateFin, String $desc){
     $this->$nomEvent=$nomEvent;
     $this->$dateDebut=$dateDebut;
     $this->$dateFin=$dateFin;
     $this->$desc=$desc;
   }
-  public getNomEvent(){
+  public function getNomEvent(){
     return $this->$nomEvent;
   }
-  public getDateDebut(){
+  public function getDateDebut(){
     return $this->$dateDebut;
   }
-  public getDateFin(){
+  public function getDateFin(){
     return $this->$dateFin;
   }
-  public getDesc(){
+  public function getDesc(){
     return $this->$desc;
   }
 }
