@@ -2,8 +2,8 @@
 class Semaine{
 private string $JourDebut;
 
-public function __construct (string $JourDebut){
-	$this ->JourDebut=JourDebut;
+public function __construct ($JourDebut){
+	$this ->JourDebut=$JourDebut;
 }
 public function GetJour(){
 	return $this->JourDebut;
@@ -13,9 +13,7 @@ public function Setjour(){
 }
 public bool YaEvent($JourDebut){
 
-	
-	
-	
+
 
 }
 
