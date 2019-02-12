@@ -1,13 +1,13 @@
 <?php
-include "model/functions.php";
-$db = mysqli_connect('localhost', "root", "", "test");
+$c = mysqli_connect('localhost', "root", "", "test");
+include_once "model/functions.php";
+
 ?>
 
 <?php
 
 
-
-  insert("utilisateur", ["'prenom'"=>"toto","'nom'"=>"toto"] ) ;
+ actionbdd("DELETE","utilisateur", [],"id=2") ;
 
 
   ?>
