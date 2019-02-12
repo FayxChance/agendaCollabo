@@ -17,6 +17,7 @@
     //EXEMPLE :
     // actionbdd(INSERT,"utilisateur", ["Nom"=>"'Mabite'"],0) ;
     // actionbdd("DELETE","utilisateur", [],"id=2") ; Supprime dans la table utilisateur la ligne dont l'id est 2
+    // actionbdd("SELECT","Event", ["Nom"=>"''"],"id=3")
     global $c;
     $keyT = "";
     $valueT = "";
@@ -35,9 +36,9 @@
       $sql = "DELETE FROM `$nomTab` WHERE $condition";
     }
     elseif ($requete == "SELECT") {
-      $sql = "SELECT `$keyT` FROM `$nomTab` WHERE $condition"
+      $sql = "SELECT `$keyT` FROM `$nomTab` WHERE $condition";
     }
-    var_dump($sql);
-    //return mysqli_query($c,$sql);
+    //var_dump($sql);
+    return mysqli_query($c,$sql);
   }
   ?>
