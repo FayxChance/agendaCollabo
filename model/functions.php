@@ -38,6 +38,6 @@
       $sql = "SELECT `$keyT` FROM `$nomTab` WHERE $condition"
     }
     var_dump($sql);
-    //return mysqli_query($c,$sql);
+    return mysqli_query($c,$sql);
   }
   ?>

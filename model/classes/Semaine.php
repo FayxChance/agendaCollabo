@@ -9,20 +9,20 @@ class Semaine{
 	public function GetJour(){
 		return $this->JourDebut;
 	}
-	public function Setjour(){
-		$this->JourDebut=JourDebut;
+	public function Setjour($JourDebut){
+		$this->JourDebut=$JourDebut;
 	}
 	public function YaEvent($JourDebut){
 		$event= array();
-		$chaine= substr(DebutEvent,0, 10);
-		$event=actionbdd("SELECT","Event",["NomEvent" =>"''"], $chaine=$JourDebut);
-		return != empty($event);
+		$chaine= substr($JourDebut,0, 10);
+		$event=actionbdd("SELECT","Event",["NomEvent" =>"''"], $chaine);
+		return  empty($event);
 	}
 	public AfficheEvent($JourDebut){
-	
-	
-		
-	
+
+
+
+
 	}
 
 }
