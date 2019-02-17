@@ -1,4 +1,5 @@
 <?php
+session_start();
 $c = mysqli_connect('localhost', "root", "root", "l2_gr5");
 include_once "model/functions.php";
 include_once "model/classes/Semaine.php";
