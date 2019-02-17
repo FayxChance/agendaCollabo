@@ -7,7 +7,7 @@ include_once "model/functions.php";
 <?php
 
 
- actionbdd("DELETE","utilisateur", [],"id=2") ;
+ actionbdd("SELECT","utilisateur", ["Nom"=>"''"],"id=3") ;
 
 
   ?>
