@@ -1,68 +1,37 @@
+<?php session_start(); ?>
 <h1>Ajout d'un Evenement </h1>
 <form method="post" action="./controller/AjoutEvent.php">
 
   <fieldset>
     <table>
       <tr>
-        <td><label>Nom </label> <input type="text" name="nomEvent" placeholder="Nom"  /></td>
-       </tr>
-       <tr>
         <td>
-          <label>Heure debut</label>
-          <select name="Heuredebut">
-            <?php
-
-            for ( $i=0; $i<24; $i++){
-              echo "<option value='$i'>"; echo $i; echo"</option>";
-            }
-            ?>
-          </select>
-        </td >
-        <td>
-          <label>minute debut</label>
-          <select name="Heure debut">
-            <?php
-            for ( $i=0; $i<60; $i=$i+5){
-              echo "<option value='$i'>"; echo $i; echo"</option>";
-            }
-            ?>
-          </select>
+          <label>Nom </label>
+          <input type="text" name="nomEvent" placeholder="Nom"  />
         </td>
+      </tr>
+      <tr>
         <td>
-          <label>Heure fin</label>
-          <select name="Heure debut">
-            <?php
-            for ( $i=0; $i<24; $i++){
-              echo "<option value='$i'>"; echo $i; echo"</option>";
-            }
-            ?>
-          </select>
-        </td>
-        <td>
-          <label>minute fin</label>
-          <select name="Heure debut">
-            <?php
-            for ( $i=0; $i<60; $i=$i+5){
-              echo "<option value='$i'>"; echo $i; echo"</option>";
-            }
-            ?>
-          </select>
+          <label> Date début </label>
+          <input type="datetime-local" name="dateEventDebut" value="">
+          <label> Date Fin </label>
+          <input type="datetime-local" name="dateEventFin" value="">
         </td>
       </tr>
       <tr>
        <td>
          <label>Description </label>
-         <textarea name="Description" rows="5" cols="40"></textarea>
+         <textarea name="description" rows="5" cols="40"></textarea>
        </tr>
        <tr>
          <td>
            <label>Lieu </label>
-           <input type="text" name="Lieu" placeholder="Lieu"/>
+           <input type="text" name="lieu" placeholder="Lieu"/>
           </td>
        </tr>
        <tr>
          <td>
-           <input type="submit" name="Envoyer" value="Envoyer"/>
+           <input type="submit" name="submitAjoutEvent" value="Ajouter"/>
          </td>
        </tr>
     </table>
