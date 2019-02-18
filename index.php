@@ -1,9 +1,10 @@
 <?php
 include_once "./view/layouts/header.php";
 session_start();
-if($_SESSION['connecte']){
+if(isset($_SESSION['connecte'])){
   echo "Bienvenue ". $_SESSION['pseudo'];
   include_once "./view/forms/logout.php";
+  include_once "./view/forms/formAjoutEvent.php";
   include_once "./model/classes/Semaine.php";
   $maSemaine=new Semaine(date("Y-m-d"));
   $maSemaine->AfficheEvent(0,0);
@@ -11,6 +12,6 @@ if($_SESSION['connecte']){
 }
 else {
   include_once "./view/forms/formLogin.php";
-
 }
+
  ?>
