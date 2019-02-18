@@ -1,5 +1,6 @@
 <!-- Select all / Add / Del / Update / Select / -->
 <?php
+include_once "./functions.php";
   function select_all($nomTab){
     //Renvoie tous les elements d'une table
     global $c;
