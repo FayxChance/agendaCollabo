@@ -16,6 +16,7 @@ if ($_POST['connexionLogin']=="Connexion" && isset($_POST['connexionLogin'])) {
      $_SESSION['connecte']=true;
      $_SESSION['pseudo']=$res['Pseudo'];
      $_SESSION['password']=$res['Mdp'];
+     $_SESSION['id']=$res['idUtilisateurs'];
      echo "connecter";
    }
 }

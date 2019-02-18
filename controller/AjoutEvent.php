@@ -2,9 +2,10 @@
   session_start();
 
   actionbdd(INSERT,"Event", [
-    "idEvent"=>"''",
-    "nomEvent"=>"'.$_POST['nomEvent'].'",
-    "Debut"=>"'.$_POST['dateEventDebut'].'",
-    "Fin"=>"'.$_POST['dateEventFin'].'",
-    "Desc"=>"'.$_POST['description'].'"],0);
+    "NomEvent"=>"'".$_POST['NomEvent']."'",
+    "Description"=>"'".$_POST['description']."'"
+    "DebutEvent"=>"'".$_POST['dateEventDebut']."'",
+    "FinEvent"=>"'".$_POST['dateEventFin']."'",
+    "Utilisateur"=>"".$_SESSION['id'].""]
+    ,0);
  ?>
