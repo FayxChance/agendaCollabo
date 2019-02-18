@@ -1,11 +1,13 @@
-<?php include_once "../model/functions.php"
+<?php
   session_start();
-
-  actionbdd(INSERT,"Event", [
+  echo "string";
+  include_once "../model/functions.php";
+  $requete=actionbdd("INSERT","event", [
     "NomEvent"=>"'".$_POST['NomEvent']."'",
     "Description"=>"'".$_POST['description']."'"
     "DebutEvent"=>"'".$_POST['dateEventDebut']."'",
     "FinEvent"=>"'".$_POST['dateEventFin']."'",
-    "Utilisateur"=>"".$_SESSION['id'].""]
+    "Utilisateur"=>$_SESSION['id']
+    ]
     ,0);
  ?>
