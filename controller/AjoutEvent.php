@@ -15,6 +15,11 @@
     "Utilisateur"=>$_SESSION['id']
     ]
     ,0);
-    var_dump($requete);
+    //var_dump($requete);
     header("Location:../index.php");
+
+
+
+
+
  ?>

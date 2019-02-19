@@ -15,5 +15,4 @@ if(isset($_SESSION['connecte'])){
 else {
   include_once "./view/forms/formLogin.php";
 }
-
  ?>
