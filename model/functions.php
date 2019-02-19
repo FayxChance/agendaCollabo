@@ -1,6 +1,6 @@
 <!-- Select all / Add / Del / Update / Select / -->
 <?php
-include_once "./functions.php";
+include_once "./db.php";
   function select_all($nomTab){
     //Renvoie tous les elements d'une table
     global $c;
@@ -39,7 +39,7 @@ include_once "./functions.php";
     elseif ($requete == "SELECT") {
       $sql = "SELECT `$keyT` FROM `$nomTab` WHERE $condition";
     }
-    var_dump($sql);
+    //var_dump($sql);
     return mysqli_query($c,$sql);
   }
   ?>

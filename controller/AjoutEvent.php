@@ -16,5 +16,5 @@
     ]
     ,0);
     var_dump($requete);
-    
+    header("Location:../index.php");
  ?>

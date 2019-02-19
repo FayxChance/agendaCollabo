@@ -1,5 +1,4 @@
 <?php
-include_once ("../functions.php");
 class Semaine{
 	private  $JourDebut;
 
@@ -16,34 +15,80 @@ class Semaine{
 		$event= array();
 		$chaine= substr($JourDebut,0, 10);
 		var_dump($chaine);
-		$event=actionbdd("SELECT","Event",["NomEvent" =>"''"], " DebutEvent LIKE '%".$chaine."%'");
+		$event=actionbdd("SELECT","event",["NomEvent" =>"''"], " DebutEvent LIKE '%".$chaine."%'");
 		return  !is_null($event);
 	}
 	public function AfficheEvent($JourDebut,$event,$idUtilisateur){
 		echo "
-		<div class='container-fluid'>
-			<div class='row'>
+		<table>
+		  <thead>";
+		    for ($i=0; $i < 7; $i++) {
+					$date=date("Y-m-d",strtotime("+".$i." days"));
+		    	echo "<th>".$date."</th>";
+		    }
+		  echo "
+			</thead>
+		  <tbody>";
+			for ($j=0; $j  <=23; $j++) {
+				echo "<tr>";
+		      for ($i=0; $i < 7; $i++) {
+						echo "<td style='padding:10px;border:2px solid black;'>";
+						$date=date("Y-m-d",strtotime("+".$i." days"));
+						$requete=actionbdd("SELECT","event",["NomEvent" =>"''"], " DebutEvent LIKE '%".$date." ".sprintf("%02d", $j)."%'");
+					while ($row=mysqli_fetch_assoc($requete)) {
+						echo $row['NomEvent'];
+					}
+						echo "</td>";
+		      }
+		    echo "</tr>";
+			}
+		  echo "
+		  </tbody>
+		</table>";
+	// 	echo "
+	// 	<div class='container-fluid'>
+	// 		<div class='row'>
+	//
+	// 	";
+	//
+	// 	for ($i=0; $i < 7; $i++) {
+	// 		$date=date("Y-m-d",strtotime("+".$i." days"));
+	// 	//	var_dump($requete);
+	// 		echo "
+	// 			<div class='col-1'>
+	// 			".$date;
+	// 			echo "
+	// 			</div>
+	// 		";
+	// 	}
+	// 	for ($j=0; $j <= 23; $j++) {
+	// 		echo "<div class='row'>&nbsp;";
+	// 		for ($i=0; $i < 7; $i++) {
+	// 			$date=date("Y-m-d",strtotime("+".$i." days"));
+	// 			$requete=actionbdd("SELECT","event",["NomEvent" =>"''"], " DebutEvent LIKE '%".$date." ".sprintf("%02d", $j)."%'");
+	// 		//	var_dump($requete);
+	// 			echo "
+	// 				<div class='col-1'>";
+	// 				while ($row=mysqli_fetch_assoc($requete)) {
+	// 				// 		var_dump($row);
+	// 				 	echo $row['NomEvent'];
+	// 				}
+	// 				echo "
+	// 				</div>
+	// 			";
+	// 		}
+	// 		echo "</div>";
+	// 	}
+	//
+	//
+	// 	echo "
+	// 		</div>
+	// 	</div>";
+	//
+	// }
 
-		";
-		for ($i=0; $i < 7; $i++) {
-			$date=date("Y-m-d",strtotime("+".$i." days"));
-			echo "
-				<div class='col-1'>
-				".$date;
-				//$requete=actionbdd("SELECT","event",["NomEvent"=>"''"],"Utilisateur=$idUtilisateur AND DebutEvent LIKE '%".$date."%'");
-				// while ($row=mysqli_fetch_assoc($requete)) {
-				// 	echo $row['NomEvent'];
-				// }
-				echo "
-				</div>
-			";
-		}
-		echo "
-			</div>
-		</div>";
 
 	}
-
 }
 
 ?>
