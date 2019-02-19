@@ -10,6 +10,7 @@ session_start();
 	<p>
 		<label for="LabelEventDel">Event à Supprimer: </label>
 			<select name="EventDel" size="1" id="LabelEventDel">
+					<option selected="selected">Choisissez l'Event</option>
 				<?php
 					$sql = "select NomEvent from Event order by NomEvent";
 					$results = mysqli_query($c,$sql);
