@@ -4,7 +4,7 @@
   session_start();
 
   if($_POST['inscription']=="Inscrire" && isset($_POST['inscription'])){
-    $recherche =actionbdd("SELECT","Utilisateurs",["*"=>"''"],"Pseudo="."'".$_POST['pseudo']."'");
+    $recherche =actionbdd("SELECT","utilisateurs",["*"=>"''"],"Pseudo="."'".$_POST['pseudo']."'");
     $res=(mysqli_fetch_assoc($recherche));
     if(is_null($res)){
       $requete=actionbdd("INSERT",
