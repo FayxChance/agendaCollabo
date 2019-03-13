@@ -3,10 +3,10 @@
 	include_once "../../model/functions.php";
 
 
-session_start();
+
 ?>
 
-<form method="post" action="../../controller/DeleteEvent.php">
+<form method="post" action="./controller/DeleteEvent.php">
 	<p>
 		<label for="LabelEventDel">Event à Supprimer: </label>
 			<select name="EventDel" size="1" id="LabelEventDel">
