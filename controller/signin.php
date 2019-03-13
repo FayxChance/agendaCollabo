@@ -2,8 +2,8 @@
   include_once "../model/db.php";
   include_once "../model/functions.php";
   session_start();
-
-  if($_POST['inscription']=="Inscrire" && isset($_POST['inscription'])){
+  //var_dump($_SESSION['error']);
+//if (empty($_SESSION['error'])) {
     $recherche =actionbdd("SELECT","utilisateurs",["*"=>"''"],"Pseudo="."'".$_POST['pseudo']."'");
     $res=(mysqli_fetch_assoc($recherche));
     if(is_null($res)){
@@ -18,5 +18,7 @@
       mysqli_free_result($requete);
     }
    }
+   //unset($_SESSION['data']);
+
   header("Location:../index.php");
  ?>

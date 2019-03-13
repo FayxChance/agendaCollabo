@@ -4,8 +4,8 @@ include_once "../model/functions.php";
 
 session_start();
 echo "string";
-var_dump($_POST);
-if ($_POST['connexionLogin']=="Connexion" && isset($_POST['connexionLogin'])) {
+//var_dump($_SESSION['error']);
+if (empty($_SESSION['error'])) {
  $recherche =actionbdd("SELECT","utilisateurs",["*"=>"''"],"Pseudo='".$_POST['pseudoLogin']."' AND Mdp='".$_POST['passwordLogin']."'");
   $res=(mysqli_fetch_assoc($recherche));
   if(is_null($res)){
@@ -17,7 +17,8 @@ if ($_POST['connexionLogin']=="Connexion" && isset($_POST['connexionLogin'])) {
      $_SESSION['password']=$res['Mdp'];
      $_SESSION['id']=$res['idUtilisateurs'];
    }
-}
+ }
+unset($_SESSION['data']);
 header("Location:../index.php");
 
  ?>
