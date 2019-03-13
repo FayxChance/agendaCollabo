@@ -2,7 +2,17 @@
 include_once "./view/layouts/header.php";
 session_start();
 if(isset($_SESSION['connecte'])){
-  echo "Bienvenue ". $_SESSION['pseudo'];
+  echo "Bienvenue ". $_SESSION['pseudo'];?>
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset = "utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<title>Accueil</title>
+	</head>
+	<body>
+<?php
   include_once "./view/forms/logout.php";
   include_once "./view/forms/formAjoutEvent.php";
   include_once "./model/classes/Semaine.php";
