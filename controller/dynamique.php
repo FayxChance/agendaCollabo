@@ -1,16 +1,10 @@
 <?php
   switch ($_GET['action']) {
     case 'agenda':
-      // code...
-      break;
-    case 'groupe':
-      // code...
-      break;
-    case 'notif':
-      // code...
+      include_once "./view/layouts/agenda.php";
       break;
     default:
-      include_once "";
+      include_once "./view/layouts/login.php";
       break;
   }
  ?>

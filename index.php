@@ -23,6 +23,10 @@ include_once "./model/functions.php";
   include_once "./controller/dynamique.php";
   include_once "./view/forms/formAjoutGroupe.php";
 
+ if(isset($_SESSION['action'])){
+    include_once "./controller/dynamique.php";
+ }
+
   if(isset($_SESSION['connecte'])){
 
   $maSemaine=new Semaine(date("Y-m-d"));
