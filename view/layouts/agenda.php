@@ -1,6 +1,25 @@
 <?php
 
  ?>
+ <header class="bg-dark">
+   <div class="inner relative ">
+     <a class="logo" href=""><img src="images/logo.png" alt="fresh design web"></a>
+     <a id="menu-toggle" class="button dark" href="#"><i class="icon-reorder"></i></a>
+     <nav id="navigation">
+       <ul id="main-menu">
+       <?php session_start();
+                     if(!isset($_SESSION['connecte'])){?>
+         <li class="current-menu-item"><a href="">Home</a></li>
+         <li class="parent">
+         <?php }else{ ?>
+         <li ><a style="color:red" href="./controller/logout.php">Logout</a></li>
+         <h5><?php echo "Bienvenue ". $_SESSION['pseudo']; ?>	 </h5>
+         <?php } ?>
+       </ul>
+     </nav>
+     <div class="clear"></div>
+   </div>
+ </header>
 <div class="wrapper">
     <!-- SIDE BAR -->
     <nav id="sidebar" class="col-2">
@@ -70,7 +89,7 @@
 
     <!-- Page Content -->
     <div id="content">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container-fluid">
             <button type="button" id="sidebarCollapse" class="btn btn-info">
                 <i class="fas fa-align-left"></i>
@@ -79,4 +98,10 @@
          </div>
      </nav>
     </div>
+    <div class="content col-8" style="border:red solid 2px">
+      <?php
+        include_once "./view/layouts/calendrier.php";
+       ?>
+    </div>
+
 </div>
