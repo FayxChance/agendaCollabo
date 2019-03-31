@@ -19,9 +19,6 @@ include_once "./model/functions.php";
 	<body>
 
 <?php
-  include_once "./controller/dynamique.php";
-  include_once "./view/forms/formAjoutGroupe.php";
-
  if(isset($_GET['action'])){
     include_once "./controller/dynamique.php";
  }
