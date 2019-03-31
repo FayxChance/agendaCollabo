@@ -2,7 +2,6 @@
 session_start();
 
 include_once "./view/layouts/header.php";
-include_once "./view/forms/formAjoutEvent.php";
 include_once "./model/classes/Semaine.php";
 include_once "./model/db.php";
 include_once "./model/functions.php";
@@ -23,18 +22,12 @@ include_once "./model/functions.php";
   include_once "./controller/dynamique.php";
   include_once "./view/forms/formAjoutGroupe.php";
 
- if(isset($_SESSION['action'])){
+ if(isset($_GET['action'])){
     include_once "./controller/dynamique.php";
  }
-
-  if(isset($_SESSION['connecte'])){
-
-  $maSemaine=new Semaine(date("Y-m-d"));
-  $maSemaine->AfficheEvent(0,0,$_SESSION['id']);
-  $date = date('m/d/Y h:i:s a', time());
-}
 else {
   include_once "./view/forms/formLogin.php";
 }
+
   include_once "./view/layouts/footer.php";
  ?>
