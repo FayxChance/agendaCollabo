@@ -16,7 +16,7 @@
     ]
     ,0);
     //var_dump($requete);
-    header("Location:../index.php");
+    header("Location:../index.php?action=agenda");
 
 
 

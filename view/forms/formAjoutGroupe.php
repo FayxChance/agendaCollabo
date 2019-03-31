@@ -1,5 +1,5 @@
 <div class="row" >
-  <div class="col-md-2">
+  <div class="formAction">
     <h3 class="text-center"> Ajout Groupe </h3>
     <form class="well" action="./controller/inscriptionGroupe.php" method="post">
       <div class="form-group">
