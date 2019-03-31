@@ -16,6 +16,8 @@ if ($_POST['connexionLogin']=="Connexion" && isset($_POST['connexionLogin'])) {
      $_SESSION['pseudo']=$res['Pseudo'];
      $_SESSION['password']=$res['Mdp'];
      $_SESSION['id']=$res['idUtilisateurs'];
+     header("Location:../index.php?action=agenda");
+
    }
 }
 header("Location:../index.php");
