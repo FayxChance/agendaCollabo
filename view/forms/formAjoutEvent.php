@@ -1,39 +1,29 @@
 <?php session_start(); ?>
-<h1>Ajout d'un Evenement </h1>
-<form method="post" action="./controller/AjoutEvent.php">
 
-  <fieldset>
-    <table>
-      <tr>
-        <td>
-          <label>Nom </label>
-          <input type="text" name="nomEvent" placeholder="Nom"  />
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <label> Date début </label>
-          <input type="datetime-local" name="dateEventDebut" value="">
-          <label> Date Fin </label>
-          <input type="datetime-local" name="dateEventFin" value="">
-        </td>
-      </tr>
-      <tr>
-       <td>
-         <label>Description </label>
-         <textarea name="description" rows="5" cols="40"></textarea>
-       </tr>
-       <tr>
-         <td>
-           <label>Lieu </label>
-           <input type="text" name="lieu" placeholder="Lieu"/>
-          </td>
-       </tr>
-       <tr>
-         <td>
-           <input type="submit" name="submitAjoutEvent" value="Ajouter"/>
-         </td>
-       </tr>
-    </table>
-   </fieldset>
- </form>
+<div class="row">
+  <div class="col-md-2">
+    <h3 class="text-center"> Ajout d'un Evenement </h3>
+    <form class="well" method="post" action="./controller/AjoutEvent.php">
+      <div class="form-group">
+        <label for="nom"> Nom </label>
+        <input  class="form-control" type="text" name="nomEvent" placeholder="Nom"  />
+      </div>
+      <div class="form-group">
+        <label for="dateDebut"> Date début </label>
+        <input type="datetime-local" name="dateEventDebut" value="">
+      </div>
+      <div class="form-group">
+        <label for="dateFin"> Date fin </label>
+        <input type="datetime-local" name="dateEventFin" value="">
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" name="description" placeholder="Entrer une description (optionnel)"></textarea>
+      </div>
+      <div class="form-group">
+        <input class="btn btn-default" type="submit" name="submitAjoutEvent" value="Ajouter">
+      </div>
+    </form>
+  </div>
+
+</div>

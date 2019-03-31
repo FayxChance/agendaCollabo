@@ -1,13 +1,13 @@
-<h1 center>Bien</h1>
+<h1 center>Bienvenue</h1>
 <div class="row">
     <div class="col-md-5">
         <h3 class="text-center">Connexion</h3>
-        <form method="post" action="./controller/login.php" class=well>
+        <form method="post" action="./controller/login.php" class="well">
             <div class="form-group">
                 <label for="pseudo">Pseudo</label>
-                <input type="pseudo" name="pseudoLogin" class="form-control" id="pseudoLogin" placeholder="pseudo">
+                <input type="text" name="pseudoLogin" class="form-control" id="pseudoLogin" placeholder="pseudo">
             </div>
-            
+
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" name="passwordLogin" class="form-control" id="password" placeholder="password">
@@ -27,12 +27,12 @@
                 <label for="pseudo">Pseudo</label>
                 <input type="pseudo" name="pseudo" class="form-control" id="pseudo" placeholder="pseudo">
             </div>
-            
+
             <div class="form-group">
                 <label for="password">Password</label>
                 <input type="password" name="password" class="form-control" id="password" placeholder="password">
             </div>
-			
+
 			 <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" name="email" class="form-control" id="email" placeholder="email">
