@@ -3,7 +3,7 @@
   include_once "../model/functions.php";
   session_start();
 
-  if($_POST['inscription']=="Inscrire" && isset($_POST['inscription'])){
+  if($_POST['inscription']=="S'inscrire" && isset($_POST['inscription'])){
     $recherche =actionbdd("SELECT","utilisateurs",["*"=>"''"],"Pseudo="."'".$_POST['pseudo']."'");
     $res=(mysqli_fetch_assoc($recherche));
     if(is_null($res)){

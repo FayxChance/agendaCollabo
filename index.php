@@ -1,6 +1,7 @@
 <?php
 include_once "./view/layouts/header.php";
 session_start();
+include_once "./controller/dynamique.php";
 if(isset($_SESSION['connecte'])){
  ?>
 <!DOCTYPE html>
@@ -10,8 +11,8 @@ if(isset($_SESSION['connecte'])){
 		<meta charset = "utf-8" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<title>Accueil</title>
-		
-		
+
+
 	</head>
 	<body>
 <?php
