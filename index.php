@@ -21,6 +21,7 @@ include_once "./model/functions.php";
 
 <?php
   include_once "./controller/dynamique.php";
+  include_once "./view/forms/formAjoutGroupe.php";
 
   if(isset($_SESSION['connecte'])){
 
