@@ -10,8 +10,9 @@ if ($_POST['connexionLogin']=="Connexion" && isset($_POST['connexionLogin'])) {
   $res=(mysqli_fetch_assoc($recherche));
   if(is_null($res)){
     $_SESSION['error']['login']= "Wrong pseudo or password";
+    header("Location:../index.php");
   }
-   else {
+  else {
      $_SESSION['connecte']=true;
      $_SESSION['pseudo']=$res['Pseudo'];
      $_SESSION['password']=$res['Mdp'];
@@ -20,6 +21,5 @@ if ($_POST['connexionLogin']=="Connexion" && isset($_POST['connexionLogin'])) {
 
    }
 }
-header("Location:../index.php");
 
  ?>
