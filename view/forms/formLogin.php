@@ -1,3 +1,4 @@
+<h1 center>Bien</h1>
 <div class="row">
     <div class="col-md-5">
         <h3 class="text-center">Connexion</h3>
