@@ -54,6 +54,15 @@
                 </li>
               </ul>
             </li>
+            <li>
+              <a href="#pageSubmenu6" data-toggle="collapse"
+              aria-expanded="false" class=" h4">Ajout Membre</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu6">
+                <li>
+                  <?php include_once "./view/forms/formAjoutMembre.php"; ?>
+                </li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>
