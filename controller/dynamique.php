@@ -3,9 +3,6 @@
     case 'agenda':
       // code...
       break;
-    case 'agenda':
-      // code...
-      break;
     case 'groupe':
       // code...
       break;

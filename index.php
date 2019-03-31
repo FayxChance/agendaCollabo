@@ -1,8 +1,11 @@
 <?php
-include_once "./view/layouts/header.php";
 session_start();
-include_once "./controller/dynamique.php";
-if(isset($_SESSION['connecte'])){
+
+include_once "./view/layouts/header.php";
+include_once "./view/forms/formAjoutEvent.php";
+include_once "./model/classes/Semaine.php";
+include_once "./model/db.php";
+include_once "./model/functions.php";
  ?>
 <!DOCTYPE html>
 <html>
@@ -15,12 +18,11 @@ if(isset($_SESSION['connecte'])){
 
 	</head>
 	<body>
-<?php
 
-  include_once "./view/forms/formAjoutEvent.php";
-  include_once "./model/classes/Semaine.php";
-  include_once "./model/db.php";
-  include_once "./model/functions.php";
+<?php
+  include_once "./controller/dynamique.php";
+
+  if(isset($_SESSION['connecte'])){
 
   $maSemaine=new Semaine(date("Y-m-d"));
   $maSemaine->AfficheEvent(0,0,$_SESSION['id']);
