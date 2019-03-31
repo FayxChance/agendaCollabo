@@ -32,9 +32,44 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-</head>
+<!DOCTYPE html>
+<html class="csstransforms no-csstransforms3d csstransitions"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Responsive Drop Down Menu jQuery CSS3 Using Icon Symbol</title>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="css/menu.css">
+    
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/function.js"></script>
 
+</head>
 <body>
-  <header>
-	<h1>Bienvenu sur notre agenda</h1>
-  </header>
+
+<div id="wrap">
+	<header>
+		<div class="inner relative">
+			<a class="logo" href=""><img src="images/logo.png" alt="fresh design web"></a>
+			<a id="menu-toggle" class="button dark" href="#"><i class="icon-reorder"></i></a>
+			<nav id="navigation">
+				<ul id="main-menu">
+				<?php session_start();
+                      if(!isset($_SESSION['connecte'])){?>
+					<li class="current-menu-item"><a href="">Home</a></li>
+					<li class="parent">
+					<?php }else{ ?>	
+					<li><a href="">mon agenda</a></li>
+					<li><a href="">creer un groupe</a></li>
+					<li><a href="">notifications</a></li>
+					
+					<li><a href="./controller/logout.php">Logout</a></li>
+					<h5><?php echo "Bienvenue ". $_SESSION['pseudo']; ?>	 </h5>
+					<?php } ?>	
+				</ul>
+			</nav>
+			<div class="clear"></div>
+		</div>
+	</header>	
+</div>    
+</body></html>
