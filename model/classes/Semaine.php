@@ -40,7 +40,7 @@ class Semaine{
 							echo $row['NomEvent'];
 						}
 						//modif jonas colin
-						$sql = "SELECT `idGroupe` FROM `Groupe_Utilisateurs` WHERE `idUtilisateurs`=$idUtilisateur";
+						//$sql = "SELECT `idGroupe` FROM `Groupe_Utilisateurs` WHERE `idUtilisateurs`=$idUtilisateur";
  	       				//$res = mysqli_query($c,$sql);
 					    //var_dump($res);
 						//exit;
