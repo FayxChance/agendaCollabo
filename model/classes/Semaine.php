@@ -42,7 +42,7 @@ class Semaine{
 						//modif jonas colin
 						$sql = "SELECT `idGroupe` FROM `Groupe_Utilisateurs` WHERE `idUtilisateurs`=$idUtilisateur";
  	       				$res = mysqli_query($c,$sql);
-					    
+					    var_dump($res);
 						while($tab = mysqli_fetch_assoc($res)){
 							var_dump($tab);
 							exit;
