@@ -8,6 +8,7 @@
     max-width: 250px;
     min-height: 100vh;
     background-color: black;
+    padding: 20px;
 }
 #sidebar.active {
     margin-left: -250px;
@@ -33,4 +34,11 @@ a[data-toggle="collapse"] {
         margin-left: 0;
     }
 
+}
+th {
+  padding: 20px 60px;
+}
+td {
+  border:2px solid black;
+  padding: 20px 60px;
 }

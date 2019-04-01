@@ -16,6 +16,10 @@
          <h5><?php echo "Bienvenue ". $_SESSION['pseudo']; ?>	 </h5>
          <?php } ?>
        </ul>
+           <button type="button" id="sidebarCollapse" class="btn btn-info">
+               <i class="fas fa-align-left"></i>
+               <span>Toggle Sidebar</span>
+           </button>
      </nav>
      <div class="clear"></div>
    </div>
@@ -89,16 +93,8 @@
 
     <!-- Page Content -->
     <div id="content">
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container-fluid">
-            <button type="button" id="sidebarCollapse" class="btn btn-info">
-                <i class="fas fa-align-left"></i>
-                <span>Toggle Sidebar</span>
-            </button>
-         </div>
-     </nav>
     </div>
-    <div class="content col-8" style="border:red solid 2px">
+    <div class="content col-10" >
       <?php
         include_once "./view/layouts/calendrier.php";
        ?>

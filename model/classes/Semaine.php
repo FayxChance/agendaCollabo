@@ -14,7 +14,6 @@ class Semaine{
 	public function YaEvent($JourDebut){
 		$event= array();
 		$chaine= substr($JourDebut,0, 10);
-		var_dump($chaine);
 		$event=actionbdd("SELECT","event",["NomEvent" =>"''"], " DebutEvent LIKE '%".$chaine."%'");
 		return  !is_null($event);
 	}
@@ -32,12 +31,12 @@ class Semaine{
 			for ($j=0; $j  <=23; $j++) {
 				echo "<tr>";
 		      for ($i=0; $i < 7; $i++) {
-						echo "<td style='padding:10px;border:2px solid black;'>";
+						echo "<td >";
 						$date=date("Y-m-d",strtotime("+".$i." days"));
-						$requete=actionbdd("SELECT","event",["NomEvent" =>"''"], " DebutEvent LIKE '%".$date." ".sprintf("%02d", $j)."%'");
-					while ($row=mysqli_fetch_assoc($requete)) {
-						echo $row['NomEvent'];
-					}
+						$requete=actionbdd("SELECT","event",["NomEvent" =>"''"], " DebutEvent<='".$date." ".sprintf("%02d", $j)."' AND FinEvent>'".$date." ".sprintf("%02d", $j)."'");
+						while ($row=mysqli_fetch_assoc($requete)) {
+							echo $row['NomEvent'];
+						}
 						echo "</td>";
 		      }
 		    echo "</tr>";
