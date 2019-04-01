@@ -26,7 +26,7 @@
     					<option selected="selected">Choisissez le groupe</option>
     				<?php
     					$id=$_SESSION['id'];
-    					$sql = "SELECT NomGroupe from groupe WHERE Utilisateur=$id order by NomGroupe ";
+    					$sql = "SELECT NomGroupe from groupe WHERE Utilisateurs=$id  order by NomGroupe ";
     					$results = mysqli_query($c,$sql);
     					while($row = mysqli_fetch_assoc($results)) {
     					echo "<option>".$row["NomGroupe"]."</option>";
