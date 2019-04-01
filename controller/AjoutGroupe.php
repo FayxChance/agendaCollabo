@@ -31,7 +31,6 @@
     mysqli_query($c,$sqlpont);
   } else {
       $_SESSION['erreur']['nomAjoutGroupe']="Un groupe porte déjà ce nom";
-      exit;
   }
   header("Location:../index.php?action=agenda");
 ?>
