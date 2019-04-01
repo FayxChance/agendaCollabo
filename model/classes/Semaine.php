@@ -18,6 +18,7 @@ class Semaine{
 		return  !is_null($event);
 	}
 	public function AfficheEvent($JourDebut,$event,$idUtilisateur){
+		
 		echo "
 		<table>
 		  <thead>";
@@ -28,6 +29,8 @@ class Semaine{
 		  echo "
 			</thead>
 		  <tbody>";
+		    $sql = "SELECT idGroupe FROM Groupe_Utilisateurs WHERE idUtilisateurs=$idUtilisateur";
+ 	        $res = mysqli_query($bdd,$sql);
 			for ($j=0; $j  <=23; $j++) {
 				echo "<tr>";
 		      for ($i=0; $i < 7; $i++) {
@@ -37,7 +40,18 @@ class Semaine{
 						while ($row=mysqli_fetch_assoc($requete)) {
 							echo $row['NomEvent'];
 						}
-						echo "</td>";
+						 
+						while($tab = mysqli_fetch_assoc($res)){
+							$idGroupe =  $tab["idGroupe"];
+							$sql2 = "SELECT NomEvent FROM Event WHERE Groupe = $idGroupe AND DebutEvent<='".$date." ".sprintf("%02d", $j)."' AND FinEvent>'".$date." ".sprintf("%02d", $j)."'");
+							$res2 = mysqli_query($bdd,$sql2);
+							
+							while($row2 = mysqli_fetch_assoc($res2)){
+								echo $row2['NomEvent'];
+							}
+						 
+							echo "</td>";
+						 }
 		      }
 		    echo "</tr>";
 			}
