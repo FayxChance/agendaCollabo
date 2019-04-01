@@ -33,7 +33,7 @@ class Semaine{
 		      for ($i=0; $i < 7; $i++) {
 						echo "<td >";
 						$date=date("Y-m-d",strtotime("+".$i." days"));
-						$requete=actionbdd("SELECT","event",["NomEvent" =>"''"], " DebutEvent<='".$date." ".sprintf("%02d", $j)."' AND FinEvent>'".$date." ".sprintf("%02d", $j)."'");
+						$requete=actionbdd("SELECT","event",["NomEvent" =>"''"], " Utilisateur=$idUtilisateur AND DebutEvent<='".$date." ".sprintf("%02d", $j)."' AND FinEvent>'".$date." ".sprintf("%02d", $j)."'");
 						while ($row=mysqli_fetch_assoc($requete)) {
 							echo $row['NomEvent'];
 						}
