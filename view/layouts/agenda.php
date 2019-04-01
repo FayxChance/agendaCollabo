@@ -86,6 +86,24 @@
                 </li>
               </ul>
             </li>
+            <li>
+              <a href="#pageSubmenu7" data-toggle="collapse"
+              aria-expanded="false" class=" h4">Ajout Event groupe</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu7">
+                <li>
+                  <?php include_once "./view/forms/formAjoutEventGroupe.php"; ?>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#pageSubmenu8" data-toggle="collapse"
+              aria-expanded="false" class=" h4">Delete Event Groupe</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu8">
+                <li>
+                  <?php include_once "./view/forms/DeleteEventGroupe.php"; ?>
+                </li>
+              </ul>
+            </li>
           </ul>
         </li>
       </ul>

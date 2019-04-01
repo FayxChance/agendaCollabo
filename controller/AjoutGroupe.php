@@ -16,5 +16,6 @@
   $data = $data["idGroupe"];
   $sqlpont = "INSERT INTO `groupe_utilisateurs`(`idGroupe`, `idUtilisateurs`) VALUES ($data,$id)";
   mysqli_query($c,$sqlpont);
+
   header("Location:../index.php?action=agenda");
 ?>
