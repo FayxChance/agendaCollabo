@@ -11,10 +11,10 @@
 					<option selected="selected">Choisissez l'Event</option>
 				<?php
 					$id=$_SESSION['id'];
-					$sql = "SELECT NomEvent from event WHERE Utilisateur=$id  AND Groupe IS NULL order by NomEvent ";
+					$sql = "SELECT `NomEvent`, `idEvent` from event WHERE Utilisateur=$id  AND Groupe IS NULL order by NomEvent ";
 					$results = mysqli_query($c,$sql);
 					while($row = mysqli_fetch_assoc($results)) {
-					echo "<option>".$row["NomEvent"]."</option>";
+					echo "<option value='".$row["idEvent"]."'>".$row["NomEvent"]."</option>";
 					}
 				?>
 			</select>
