@@ -1,18 +1,17 @@
 <?php
-	include_once "../../model/db.php";
-	include_once "../../model/functions.php";
-
-
+	include_once "./model/db.php";
+	include_once "./model/functions.php";
 
 ?>
 
 <form method="post" action="./controller/DeleteEvent.php">
 	<p>
 		<label for="LabelEventDel">Event à Supprimer: </label>
-			<select name="EventDel" size="1" id="LabelEventDel">
+			<select name="EventDel"  id="LabelEventDel">
 					<option selected="selected">Choisissez l'Event</option>
 				<?php
-					$sql = "select NomEvent from Event order by NomEvent";
+					$id=$_SESSION['id'];
+					$sql = "SELECT NomEvent from event WHERE Utilisateur=$id  AND Groupe IS NULL order by NomEvent ";
 					$results = mysqli_query($c,$sql);
 					while($row = mysqli_fetch_assoc($results)) {
 					echo "<option>".$row["NomEvent"]."</option>";

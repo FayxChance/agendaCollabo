@@ -40,6 +40,7 @@
 	<title>Responsive Drop Down Menu jQuery CSS3 Using Icon Symbol</title>
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
 	<link rel="stylesheet" type="text/css" href="css/menu.css">
+  <link rel="stylesheet" type="text/css" href="css/moncss.css">
 
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="js/function.js"></script>
@@ -48,28 +49,5 @@
 <body>
 
 <div id="wrap">
-	<header>
-		<div class="inner relative">
-			<a class="logo" href=""><img src="images/logo.png" alt="fresh design web"></a>
-			<a id="menu-toggle" class="button dark" href="#"><i class="icon-reorder"></i></a>
-			<nav id="navigation">
-				<ul id="main-menu">
-				<?php session_start();
-                      if(!isset($_SESSION['connecte'])){?>
-					<li class="current-menu-item"><a href="">Home</a></li>
-					<li class="parent">
-					<?php }else{ ?>
-					<li><a href="index.php?action=agenda">mon agenda</a></li>
-					<li><a href="index.php?action=groupe">creer un groupe</a></li>
-					<li><a href="index.php?action=notif">notifications</a></li>
 
-					<li><a href="./controller/logout.php">Logout</a></li>
-					<h5><?php echo "Bienvenue ". $_SESSION['pseudo']; ?>	 </h5>
-					<?php } ?>
-				</ul>
-			</nav>
-			<div class="clear"></div>
-		</div>
-	</header>
 </div>
-</body></html>

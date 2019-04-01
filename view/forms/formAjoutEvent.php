@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 
 <div class="row">
-  <div class="col-md-2">
+  <div class="formAction" id="formAjoutEvent">
     <h3 class="text-center"> Ajout d'un Evenement </h3>
     <form class="well" method="post" action="./controller/AjoutEvent.php">
       <div class="form-group">
