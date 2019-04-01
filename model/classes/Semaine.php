@@ -44,6 +44,8 @@ class Semaine{
  	       				$res = mysqli_query($c,$sql);
 					    
 						while($tab = mysqli_fetch_assoc($res)){
+							var_dump($tab);
+							exit;
 							$idGroupe =  $tab["idGroupe"];
 							$sql2 = "SELECT `NomEvent` FROM `Event` WHERE `Groupe` = $idGroupe AND DebutEvent<='".$date." ".sprintf("%02d", $j)."' AND FinEvent>'".$date." ".sprintf("%02d", $j)."'");
 							$res2 = mysqli_query($c,$sql2);
