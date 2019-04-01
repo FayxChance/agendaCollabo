@@ -29,8 +29,7 @@ class Semaine{
 		  echo "
 			</thead>
 		  <tbody>";
-		    $sql = "SELECT idGroupe FROM Groupe_Utilisateurs WHERE idUtilisateurs=$idUtilisateur";
- 	        $res = mysqli_query($bdd,$sql);
+		    
 			for ($j=0; $j  <=23; $j++) {
 				echo "<tr>";
 		      for ($i=0; $i < 7; $i++) {
@@ -40,16 +39,19 @@ class Semaine{
 						while ($row=mysqli_fetch_assoc($requete)) {
 							echo $row['NomEvent'];
 						}
-						 
+						//modif jonas colin
+						$sql = "SELECT `idGroupe` FROM `Groupe_Utilisateurs` WHERE `idUtilisateurs`=$idUtilisateur";
+ 	       				$res = mysqli_query($c,$sql);
+					    
 						while($tab = mysqli_fetch_assoc($res)){
 							$idGroupe =  $tab["idGroupe"];
-							$sql2 = "SELECT NomEvent FROM Event WHERE Groupe = $idGroupe AND DebutEvent<='".$date." ".sprintf("%02d", $j)."' AND FinEvent>'".$date." ".sprintf("%02d", $j)."'");
-							$res2 = mysqli_query($bdd,$sql2);
+							$sql2 = "SELECT `NomEvent` FROM `Event` WHERE `Groupe` = $idGroupe AND DebutEvent<='".$date." ".sprintf("%02d", $j)."' AND FinEvent>'".$date." ".sprintf("%02d", $j)."'");
+							$res2 = mysqli_query($c,$sql2);
 							
 							while($row2 = mysqli_fetch_assoc($res2)){
 								echo $row2['NomEvent'];
 							}
-						 
+						// fin modif jonas colin
 							echo "</td>";
 						 }
 		      }
