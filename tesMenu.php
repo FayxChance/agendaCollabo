@@ -134,12 +134,94 @@
 <!-- menu vertical -->
 <nav id="menu" class="left">
   <ul>
-    <li><a href="./controller/logout.php" class="active"><i class="fa fa-home"></i>Home</a></li>
-		<li class="active"><a href="index.php"><i class="fa fa-home"></i>Home</a></li>
-		<li class="active"><a href="index.php?actionUtilisateur"><i class="fa fa-info-circle"></i>Evenements</a></li>
-		<li class="active"><a href="./view/forms/formAjoutEvent.php"><i class="fa fa-group"></i>Groupes </a></li>
-		<li class="active"><a href="./view/forms/formAjoutEvent.php"><i class="fa fa-flickr"></i>Notifications </a></li>
- 
+    <li><a href="#" class="active"><i class="fa fa-home"></i>Home</a></li>
+    <li><a href="#"><i class="fa fa-info-circle"></i>About</a></li>
+    <li> <a href="a href="#homeSubmenu" data-toggle="collapse"
+          aria-expanded="false" class=" h3""><i class="fa fa-laptop"></i>Evenements <i class="fa fa-caret-down"></i></a>
+      <ul class="collapse list-unstyled" id="homeSubmenu">
+       <li>
+              <a href="#pageSubmenu" data-toggle="collapse"
+              aria-expanded="false" class=" h4">Ajout Event</a>
+			  <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                  <?php include_once "./view/forms/formAjoutEvent.php"; ?>
+                </li>
+              </ul>
+            </li>
+        <li>
+              <a href="#pageSubmenu2" data-toggle="collapse"
+              aria-expanded="false" class=" h4">Delete Event</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu2">
+                <li>
+                  <?php include_once "./view/forms/DeleteEvent.php"; ?>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+		
+		 <li>
+		 <a href="#homeSubmenu3" data-toggle="collapse"
+          aria-expanded="false" class=" h3"><i class="fa fa-group" aria-hidden="true"></i> Groupe </a>
+      <ul class="collapse list-unstyled" id="homeSubmenu3">
+            <li>
+              <a href="#pageSubmenu4" data-toggle="collapse"
+              aria-expanded="false" class="h4">Ajout Groupe</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu4">
+                <li>
+                  <?php include_once "./view/forms/formAjoutGroupe.php"; ?>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#pageSubmenu5" data-toggle="collapse"
+              aria-expanded="false" class=" h4">Delete Groupe</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu5">
+                <li>
+                  <?php include_once "./view/forms/formDeleteGroupe.php"; ?>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#pageSubmenu6" data-toggle="collapse"
+              aria-expanded="false" class=" h4">Ajout Membre</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu6">
+                <li>
+                  <?php include_once "./view/forms/formAjoutMembre.php"; ?>
+                </li>
+              </ul>
+            </li>
+            <li>
+			
+        
+      </ul>
+    </li>
+	
+	<li> 
+	 <a href="#pageSubmenu7" data-toggle="collapse"
+              aria-expanded="false" class=" h4"><i class="fa fa-group" aria-hidden="true"></i>Ajout Event groupe</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu7">
+                <li>
+                  <?php include_once "./view/forms/formAjoutEventGroupe.php"; ?>
+                </li>
+              </ul>
+            </li>
+			</li>
+            <li>
+              <a href="#pageSubmenu8" data-toggle="collapse"
+              aria-expanded="false" class=" h4"><i class="fa fa-close"></i>Delete Event Groupe</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu8">
+                <li>
+                  <?php include_once "./view/forms/DeleteEventGroupe.php"; ?>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+	<ul>		
+	<li><a href="#"><i class="fa fa-flickr" aria-hidden="true"></i>Notification</a></li>
+    <li><a href="#"><i class="fa fa-phone"></i>Contact</a></li>
+  </ul>
   <a href="#" id="showmenu"> <i class="fa fa-align-justify"></i> </a> </nav>
 <!-- /menu vertical --> 
 
