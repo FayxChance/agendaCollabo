@@ -1,4 +1,6 @@
 <?php session_start();
+
+//Insere l'evenement du groupe dans la table event
   echo "string";
   include_once "../model/db.php";
   include_once "../model/functions.php";
@@ -29,5 +31,22 @@
       ]
       ,0);
   }
-//var_dump($requete);
+
+//invite tous les utilisateurs du groupe à participer à l'evenement ajouté:
+
+//recuperation des id de chaque membre du groupe
+$global $c;
+$id= mysqli_insert_id($c);
+
+$selectMembres = "SELECT `member` FROM member_group JOIN groups ON `group`=`id` WHERE  `name`='$nomGroupe' ";
+$res= mysqli_query($c,$selectMembres);
+
+while($tabIdMembres=mysqli_fetch_assoc($res)){
+  $idMembres[ ]= $tabIdMembres["member"];
+}
+
+//appel a inviteMembres pour inviter chaque membre a l'evenement
+inviteMembres($idMembres,$id);
+
+
   header("Location:../index.php?action=agenda");
